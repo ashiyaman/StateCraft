@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import Posts from "./features/posts/Posts"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Here</h1>
+      <h1>Social Media App</h1>
+      <div>
+        <Posts />
+      </div>
     </>
   )
 }
