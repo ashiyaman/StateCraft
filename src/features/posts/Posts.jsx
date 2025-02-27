@@ -1,16 +1,18 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { likeButtonPressed } from "./postSlice";
 
 const Posts = () => {
+    const dispatch = useDispatch()
     const data = useSelector(state => state.posts)
-
-    console.log(data)
     return (
         <>
             {
                 data.posts.map(post => 
                     <div key={post.postId}>
                         <p>{post.caption}</p>
-                        <p>{post.likes}</p>
+                        <button onClick={() => dispatch(likeButtonPressed(post.postId))}>
+                            {post.likes} likes
+                        </button>
                     </div>
                 )
             }
